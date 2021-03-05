@@ -12,6 +12,7 @@
             for (let i = 0; i < storedLocations.length; i++) {
                 const cityBtn = $('<button>')
                 cityBtn.text(storedLocations[i]);
+                // cityBtn.data('data', cityBtn.text().val())
                 cityBtn.attr('class', 'list-group-item list-group-item-action cityBtn');
                 $('#cityList').append(cityBtn)
             }
@@ -103,7 +104,7 @@
         renderHistory()
     })
 
-    $('.list-group-item').on('click', function () {
+    $('.list-group').on('click', 'button', function () {
         let city = $(this).text();
         console.log(city)
         getWeather(city)
